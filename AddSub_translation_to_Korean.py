@@ -20,7 +20,7 @@ def translate_json(json_data):
     # 각 문장을 한국어로 번역
     translated_data = {}
     for key, value in json_data.items():
-        if key in ["question", "rationale"]:
+        if key in ["sQuestion"]:
             translated_data[key] = translate_text(value)
         else:
             translated_data[key] = value
@@ -30,7 +30,7 @@ def translate_json(json_data):
 def translate_and_save(input_file, output_file):
     # JSON 파일 읽기
     with open(input_file, 'r', encoding='utf-8') as file:
-        json_list = [json.loads(line) for line in file]
+        json_list = json.load(file)
 
     translated_data_list = []
     count = 0
@@ -48,8 +48,8 @@ def translate_and_save(input_file, output_file):
 
 if __name__ == "__main__":
     # 입력 파일 및 출력 파일명 지정
-    input_file_name = "./dataset/AQuA/test.json"
-    output_file_name = "./translated_output_file.json"
+    input_file_name = "./dataset/AddSub/AddSub.json"
+    output_file_name = "./AddSub_translated_output_file.json"
 
     # 번역하고 저장
     translate_and_save(input_file_name, output_file_name)
