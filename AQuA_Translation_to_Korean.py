@@ -30,7 +30,7 @@ def translate_json(json_data):
 def translate_and_save(input_file, output_file):
     # JSON 파일 읽기
     with open(input_file, 'r', encoding='utf-8') as file:
-        json_list = json.load(file)
+        json_list = [json.loads(line) for line in file]
 
     translated_data_list = []
     count = 0
