@@ -48,7 +48,7 @@ def translate_and_save(input_file, output_file):
 
 if __name__ == "__main__":
     # 입력 파일 및 출력 파일명 지정
-    input_file_name = "./dataset/AddSub/AddSub.json"
+    input_file_name = "./dataset/AQuA/test.json"
     output_file_name = "./AddSub_translated_output_file.json"
 
     # 번역하고 저장
